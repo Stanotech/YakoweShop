@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 OSCAR_DEFAULT_CURRENCY = 'PLN'
 
-OSCAR_THUMBNAILER = 'sorl.thumbnail.get_thumbnail'
+
 # Application definition
 
 INSTALLED_APPS = [
