@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-$-#uwxvrs+9$r07b57x0lo!7fmz4dyor*_ga#ql3m7t8(dmze(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['172.19.0.2']
 
 OSCAR_DEFAULT_CURRENCY = 'PLN'
 
@@ -196,8 +196,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-
-print(os.path.join(BASE_DIR, 'YakoweShop', 'static'))
+# print("\n" * 5)
+# print(os.path.join(BASE_DIR, 'media'))
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
