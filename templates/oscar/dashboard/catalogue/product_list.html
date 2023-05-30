@@ -39,7 +39,28 @@
                 <button class="btn btn-primary" type="submit" data-loading-text="{% trans 'Submitting...' %}">
                     <i class="fas fa-plus-circle"></i> {% trans "New Product" %}
                 </button>
+                &nbsp
+                <button class="btn btn-primary" type="submit" data-loading-text="{% trans 'Submitting...' %}">
+                    <i class="fas fa-plus-circle"></i> {% trans "New products from photos" %}
+                </button>
             </form>
+            
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input id="id_folder_path" type="text" name="folder_path" readonly>
+                <input id="id_image_files" type="file" name="image_files" multiple>
+                <button type="submit">Wyślij zdjęcia</button>
+              </form>
+            
+              <script>
+                function selectFolder() {
+                  window.open('/select_folder', '_blank', 'width=600,height=400');
+                }
+            
+                function setFolderPath(folderPath) {
+                  document.getElementById('id_folder_path').value = folderPath;
+                }
+              </script>
         </div>
     {% endblock %}
 
