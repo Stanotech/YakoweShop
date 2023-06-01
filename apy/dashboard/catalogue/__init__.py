@@ -1,1 +1,1 @@
-default_app_config = 'apy.dashboard.catalogue.apps.CatalogueConfig'
+default_app_config = 'apy.dashboard.catalogue.apps.CatalogueDashboardConfig'
