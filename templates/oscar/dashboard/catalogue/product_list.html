@@ -38,12 +38,12 @@
 
                 {% include "oscar/dashboard/partials/form_fields_inline.html" with form=productclass_form %}
 
-                <button class="btn btn-primary" type="submit" data-loading-text="{% trans 'Submitting...' %}">
+                <button class="btn btn-primary" type="submit" data-loading-text="{% trans 'Submitting...' %}" formaction="{% url 'dashboard:catalogue-product-create' %}">
                     <i class="fas fa-plus-circle"></i> {% trans "New Product" %}
                 </button>   
-                <button class="btn btn-primary" type="submit" data-loading-text="{% trans 'Submitting...' %}">
-                    <i class="fas fa-plus-circle"></i> {% trans "Add new products from photos" %}
-                </button>             
+                <button class="btn btn-primary" type="submit" data-loading-text="{% trans 'Submitting...' %}" formaction="{% url 'dashboard:catalogue-products-create' %}">
+                    <i class="fas fa-plus-circle"></i> {% trans "New Products from images" %}
+                </button>               
             </form>
 
             &nbsp
