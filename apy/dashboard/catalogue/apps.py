@@ -9,3 +9,5 @@ class CatalogueDashboardConfig(apps.CatalogueDashboardConfig):
             path('products/createmulti/', self.product_create_redirect_view.as_view(), name='catalogue-products-create'),
         ]
         return self.post_process_urls(urls)
+    
+    
