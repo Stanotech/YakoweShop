@@ -6,7 +6,10 @@ class CatalogueDashboardConfig(apps.CatalogueDashboardConfig):
     def get_urls(self):
         urls = super().get_urls()
         urls += [
-            path('products/createmulti/', self.product_create_redirect_view.as_view(), name='catalogue-productss-create'),
+            path(
+            'products/create/<slug:product_class_slug>/<str:multi_image>/',
+            self.product_createupdate_view.as_view(),
+            name='catalogue-product-create'),
         ]
         return self.post_process_urls(urls)
     
