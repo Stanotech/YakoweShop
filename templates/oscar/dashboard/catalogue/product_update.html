@@ -96,7 +96,7 @@
                                         </a>
                                     </li>
                                 {% endif %}
-                                {% if user.is_staff and not parent %}
+                                {% if user.is_staff and not parent  and not multi_image %}
                                     <li class="nav-item">
                                         <a class="nav-link" href="#child_products" data-toggle="tab">
                                             {% trans 'Variants' %}

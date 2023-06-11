@@ -13,5 +13,3 @@ class CatalogueDashboardConfig(apps.CatalogueDashboardConfig):
         ]
         return self.post_process_urls(urls)
     
-class ProductCreateUpdateView(apps.ProductCreateUpdateView):
-    
