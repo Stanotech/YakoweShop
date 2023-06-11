@@ -34,6 +34,7 @@ class ProductCreateUpdateView(views.ProductCreateUpdateView):
         ctx['product_class'] = self.product_class
         ctx['parent'] = self.parent
         ctx['title'] = self.get_page_title()
+        ctx['multi_image'] = self.request.GET.get('multi_image')
 
         for ctx_name, formset_class in self.formsets.items():
             if ctx_name not in ctx:
@@ -41,8 +42,4 @@ class ProductCreateUpdateView(views.ProductCreateUpdateView):
                                               self.request.user,
                                               instance=self.object)
                 
-        print("Formset names:", [name for name in ctx.keys()])       
-        if self.request.GET.get('multi_image') == 'true':
-            ctx['recommended_formset'] = None
-            ctx['upselling_formset'] = None
         return ctx

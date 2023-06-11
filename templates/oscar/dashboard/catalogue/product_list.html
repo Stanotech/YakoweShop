@@ -35,17 +35,17 @@
         </div>
         <div class="card card-body">
             <form action="{% url 'dashboard:catalogue-product-create' %}" method="get" class="form-inline">
-
                 {% include "oscar/dashboard/partials/form_fields_inline.html" with form=productclass_form %}
-
-                <button class="btn btn-primary" type="submit" data-loading-text="{% trans 'Submitting...' %}" formaction="{% url 'dashboard:catalogue-product-create' %}">
+            
+                <button class="btn btn-primary" type="submit" data-loading-text="{% trans 'Submitting...' %}" formaction="{% url 'dashboard:catalogue-product-create' %}?multi_image=false">
                     <i class="fas fa-plus-circle"></i> {% trans "New Product" %}
                 </button>   
-                <button class="btn btn-primary" type="submit" data-loading-text="{% trans 'Submitting...' %}" formaction="{% url 'dashboard:catalogue-product-create' %}">
-                    <input type="hidden" name="multi_image" value="true">
+            
+                <button class="btn btn-primary" type="submit" data-loading-text="{% trans 'Submitting...' %}" formaction="{% url 'dashboard:catalogue-product-create' %}?multi_image=true">
                     <i class="fas fa-plus-circle"></i> {% trans "New Products from images" %}
                 </button>               
             </form>
+            
 
             &nbsp
             {% block content2 %}
