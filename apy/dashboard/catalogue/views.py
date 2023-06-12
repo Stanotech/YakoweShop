@@ -14,14 +14,16 @@ class ProductCreateRedirectView(views.ProductCreateRedirectView):
         return reverse('dashboard:catalogue-product-create', kwargs=kwargs)
 
     def get_invalid_product_class_url(self):
-        messages.error(self.request, _("Please choose a product type"))
+        messages.error(self.request, ("Please choose a product type"))
         return reverse('dashboard:catalogue-product-list')
 
     def get_redirect_url(self, **kwargs):
-        form = self.productclass_form_class(self.request.GET) #creating instance of form class with arguments from request
+        form = self.productclass_form_class(self.request.POST) #creating instance of form class with arguments from request
         if form.is_valid():
             product_class = form.cleaned_data['product_class'] #cleaned_data return dictionary from form
-            multi_image = self.request.GET.get('multi_image')
+            multi_image = self.request.POST.get('multi_image')
+            print(self.request.POST)
+            print(multi_image)
             return self.get_product_create_url(product_class, multi_image)
 
         else:
