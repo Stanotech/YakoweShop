@@ -89,6 +89,7 @@
                                       {% trans 'Images' %}
                                   </a>
                                 </li>
+                                {{multi_image}}
                                 {% if not product.is_parent %}
                                     <li class="nav-item">
                                         <a class="nav-link" href="#product_stock" data-toggle="tab">
@@ -96,15 +97,17 @@
                                         </a>
                                     </li>
                                 {% endif %}
-                                {% if user.is_staff and not parent  and not multi_image %}
+                                {% if user.is_staff and not parent and multi_image == "False" %}
                                     <li class="nav-item">
                                         <a class="nav-link" href="#child_products" data-toggle="tab">
                                             {% trans 'Variants' %}
                                         </a>
                                     </li>
                                 {% endif %}
-                                {% if not parent and multi_image%}
+                                {% if not parent and multi_image == "False" %}
                                     <li class="nav-item">
+                                        {{parent}}
+                                        {{multi_image}}
                                         <a class="nav-link" href="#product_recommended" data-toggle="tab">
                                             {% trans 'Upselling' %}
                                         </a>

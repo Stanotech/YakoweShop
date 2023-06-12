@@ -36,7 +36,7 @@ class ProductCreateUpdateView(views.ProductCreateUpdateView):
         ctx['product_class'] = self.product_class
         ctx['parent'] = self.parent
         ctx['title'] = self.get_page_title()
-        ctx['multi_image'] = self.request.GET.get('multi_image')
+        ctx['multi_image'] = self.kwargs.get('multi_image')
 
         for ctx_name, formset_class in self.formsets.items():
             if ctx_name not in ctx:
